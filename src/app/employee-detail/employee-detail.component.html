@@ -1,3 +1,4 @@
-<p>
-  employee-detail works!
-</p>
+<h2>Employee Details</h2>
+<ul *ngFor="let employee of employees">
+  <li>{{employee.id}} - {{employee.name}} - {{employee.gender}}</li>
+</ul>
