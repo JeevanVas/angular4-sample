@@ -7,12 +7,14 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  employees = [];
+  employees: any= [];
+  errorMsg: string;
   constructor(private _employeeService: EmployeeService) { }
 
   ngOnInit() {
-    //this.employees = this._employeeService.getEmployees();
     this._employeeService.getEmployees()
-    .subscribe(resEmployeeData => this.employees = resEmployeeData);
+    .subscribe(resEmployeeData => this.employees = resEmployeeData,
+               resEmployeeError => this.errorMsg = resEmployeeError);
+    console.log(this._employeeService );
   }
 }
