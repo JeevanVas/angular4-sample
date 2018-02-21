@@ -32,5 +32,12 @@
 <!--<app-user-data-tdf></app-user-data-tdf>-->
 <!--<app-user-data-mdf></app-user-data-mdf> -->
 
-<app-employee-list></app-employee-list>
-<app-employee-detail></app-employee-detail>
+<!--<app-employee-list></app-employee-list>
+<app-employee-detail></app-employee-detail>-->
+
+<h1>Routing Application</h1>
+<nav>
+  <a routerLink='/departments' routerLinkActive="active">Departments</a>
+  <a routerLink="/employees" routerLinkActive="active">Employees</a>
+</nav>
+<router-outlet></router-outlet>
