@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { UserDataTdfComponent } from './user-data-tdf/user-data-tdf.component';
 import { UserDataMdfComponent } from './user-data-mdf/user-data-mdf.component';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
-import { DepartmentListComponent } from './department-list/department-list.component';
+import { routingComponents } from './app-routing.module';
 
 
 @NgModule({
@@ -20,19 +20,15 @@ import { DepartmentListComponent } from './department-list/department-list.compo
     TutorialsComponent,
     UserDataTdfComponent,
     UserDataMdfComponent,
-    EmployeeListComponent,
     EmployeeDetailComponent,
-    DepartmentListComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {path:'departments', component:DepartmentListComponent},
-      {path:'employees', component:EmployeeListComponent}
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
