@@ -5,6 +5,9 @@ import { ActivatedRoute, Router, Params } from "@angular/router";
     template:`<h3>You selected department with id = {{departmentId}}</h3>
               <a (click)="goPrevious()"> Previous </a>
               <a (click)="goNext()"> Next </a>
+              <p>
+              <button class="btn btn-primary" (click)="goToDepartments()">Back</button>
+              </p>
               `
 })
 export class DepartmentDetailComponent implements OnInit{
@@ -28,4 +31,9 @@ export class DepartmentDetailComponent implements OnInit{
         let nextId = this.departmentId + 1;
         this.router.navigate(['/departments', nextId]);
     }
+    goToDepartments(){
+        let selectedId = this.departmentId? this.departmentId: null;
+        this.router.navigate(['/departments', {id: selectedId, random: "optionalText"}]);
+    }
+    
 }
