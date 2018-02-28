@@ -7,7 +7,7 @@ import { HomeComponent } from "./home.component";
 import { PageNotFoundComponent } from "./page-not-found.component";
 
 const routes:Routes = [
-    {path: '', component: HomeComponent},
+    {path: '', redirectTo: '/departments', pathMatch: 'full'},
     {path: 'departments', component: DepartmentListComponent},
     {path: 'employees', component: EmployeeListComponent},
     {path: 'departments/:id', component: DepartmentDetailComponent},
