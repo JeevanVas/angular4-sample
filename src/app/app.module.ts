@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
@@ -12,6 +13,7 @@ import { UserDataTdfComponent } from './user-data-tdf/user-data-tdf.component';
 import { UserDataMdfComponent } from './user-data-mdf/user-data-mdf.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { routingComponents } from './app-routing.module';
+import { AnimationComponent } from './animation/animation.component';
 
 
 @NgModule({
@@ -21,14 +23,16 @@ import { routingComponents } from './app-routing.module';
     UserDataTdfComponent,
     UserDataMdfComponent,
     EmployeeDetailComponent,
-    routingComponents
+    routingComponents,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
