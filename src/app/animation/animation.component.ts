@@ -13,7 +13,7 @@ import { Component, OnInit,
   templateUrl: './animation.component.html',
   styleUrls: ['./animation.component.css'],
   animations: [
-    trigger('lightsOnOff', [
+    /*trigger('lightsOnOff', [
       state('off', style({
         backgroundColor: 'black'
       })),
@@ -22,7 +22,31 @@ import { Component, OnInit,
       })),
      // transition('off <=> on', [animate('2s', style({transform: 'rotate(90deg)'}))]),
       transition('off => on', [animate('2000ms 2s ease-in', style({transform: 'rotate(90deg)'}))]),
-      transition('on => off', [animate('2s ease-out', style({transform: 'rotate(-90deg)'}))]),
+      transition('on => off', [animate('2s ease-out', style({transform: 'rotate(- 90deg)'}))]),
+    ]) */
+    trigger('groupTrigger',[
+      state('off', style({
+        backgroundColor: 'black'
+      })),
+      state('on', style({
+        backgroundColor: 'white'
+      })),
+      transition('off => on', group([
+        animate('4s ease-in', style({
+          transform: 'rotate(90deg)',
+        })),
+        animate('2s ease-out', style({
+          width: '50px'
+        }))
+      ])),
+      transition('on => off', group([
+        animate('3s 1s ease-in', style({
+          transform: 'rotate(360deg)',
+        })),
+        animate('2s ease-in', style({
+          opacity: 0
+        }))
+      ]))
     ])
   ]
 })
