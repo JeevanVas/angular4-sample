@@ -24,6 +24,7 @@ import { Component, OnInit,
       transition('off => on', [animate('2000ms 2s ease-in', style({transform: 'rotate(90deg)'}))]),
       transition('on => off', [animate('2s ease-out', style({transform: 'rotate(- 90deg)'}))]),
     ]) */
+    /*
     trigger('groupTrigger',[
       state('off', style({
         backgroundColor: 'black'
@@ -48,11 +49,26 @@ import { Component, OnInit,
         }))
       ]))
     ])
+    */
+   trigger('flyInOut',[
+    // transition('void => *', [
+     transition(':enter', [
+      style({transform: 'translateX(-100%)'}),
+      animate('1s')
+     ]),
+     //transition('* => void', [
+     transition(':leave', [
+       animate('1s', style({transform: 'translateX(100%)'}))
+       
+     ])
+
+   ])
   ]
 })
 export class AnimationComponent implements OnInit {
   title = 'Angular Animations';
   roomState: string = "off";
+  showDiv: boolean = true;
   constructor() { }
 
   ngOnInit() {
@@ -71,5 +87,8 @@ export class AnimationComponent implements OnInit {
     console.log(event.toState);
     console.log(event.totalTime);
     console.log('Animation Done');
+  }
+  toggleDiv(){
+    this.showDiv = this.showDiv? false: true;
   }
 }
