@@ -1,3 +1,3 @@
 <h1>{{title}}</h1>
 <button (click)="toggleLights()">Toggle Lights</button>
-<div [@lightsOnOff]="roomState" class="room"></div>
+<div (@lightsOnOff.done)="animationDone($event)" (@lightsOnOff.start)="animationStarted($event)" [@lightsOnOff]="roomState" class="room">Rotate</div>
